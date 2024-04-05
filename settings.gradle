@@ -1,0 +1,5 @@
+rootProject.name = 'fc3-adm-do-catalogo-29Mar2024'
+include 'domain'
+include 'application'
+include 'infrastruture'
+
