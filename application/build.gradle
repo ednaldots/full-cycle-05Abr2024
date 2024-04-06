@@ -11,9 +11,15 @@ repositories {
 
 dependencies {
     implementation(project(":domain"))
+    implementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation platform('org.junit:junit-bom:5.11.0')
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '5.11.0'
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.testng:testng:7.1.0'
 }
 
 test {

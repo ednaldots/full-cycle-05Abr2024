@@ -9,7 +9,7 @@ public class DomainException extends RuntimeException  {
     private final List<Error> errors;
 
 
-    private DomainException ( final String aMessage , final List<Error> anErrors ) {
+    DomainException ( final String aMessage , final List<Error> anErrors ) {
         super("aMassage");
         this.errors = anErrors;
     }

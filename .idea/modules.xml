@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.iml" filepath="$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.iml" filepath="$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.test.iml" filepath="$PROJECT_DIR$/.idea/modules/application/fc3-adm-do-catalogo-29Mar2024.application.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/fc3-adm-do-catalogo-29Mar2024.domain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.main.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.test.iml" filepath="$PROJECT_DIR$/.idea/modules/infrastruture/fc3-adm-do-catalogo-29Mar2024.infrastruture.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fc3-adm-do-catalogo-29Mar2024.test.iml" />
+    </modules>
+  </component>
+</project>

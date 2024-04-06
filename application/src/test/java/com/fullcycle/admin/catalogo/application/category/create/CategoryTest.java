@@ -1,13 +1,13 @@
-package com.fullcycle.admin.catalogo.domain;
+package com.fullcycle.admin.catalogo.application.category.create;
+
 import com.fullcycle.admin.catalogo.domain.category.Category;
 import com.fullcycle.admin.catalogo.domain.exceptions.DomainException;
 import com.fullcycle.admin.catalogo.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 public class CategoryTest {
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAnIAValidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError() {
         final String expectedName="Filmes";
         final var expectedDescription="A categoria mais assistida";
@@ -16,7 +16,7 @@ public class CategoryTest {
         final var actualCategory=
                 Category.newCategory ( expectedName,expectedDescription,expectedIsActive );
 
-
+        
         Assertions.assertNotNull ( actualCategory );
         Assertions.assertNotNull ( actualCategory.getId ( ) );
         Assertions.assertEquals ( expectedName,actualCategory.getName ( ) );
@@ -26,7 +26,7 @@ public class CategoryTest {
         Assertions.assertNotNull ( actualCategory.getUpdatedAt ( ) );
         Assertions.assertNull ( actualCategory.getDeletedAt ( ) );
     }
-        @Test
+        @CreateCategoryUseCaseTest
         public void givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError() {
             final String expectedName = null;
             final var expectedErrorCount = 1;
@@ -43,7 +43,7 @@ public class CategoryTest {
             Assertions.assertEquals(expectedErrorCount, actualException.getErrors().size());
             Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
         }
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAnInvalidEmptylName_whenCallNewCategoryAndValidate_thenShouldReceiveError() {
         final var expectedName = " ";
         final var expectedErrorCount = 1;
@@ -61,7 +61,7 @@ public class CategoryTest {
         Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAnInvalidName_LengthLessThan3_whenCallNewCategoryAndValidate_thenShouldReceiveError() {
         final var expectedName = "Fi ";
         final var expectedErrorCount = 1;
@@ -79,7 +79,7 @@ public class CategoryTest {
         Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAnInvalidNameLengthMoreThan255_whenCallNewCategoryAndValidate_thenShouldReceiveError() {
         final var expectedName = """
                 Gostaria de enfatizar que o consenso sobre a necessidade de qualificação auxilia a preparação e a
@@ -102,7 +102,7 @@ public class CategoryTest {
         Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidEmptyDescription_whenCallNewCategoryAndValidate_thenShouldReceiveOK() {
         final var expectedName = "Filmes";
         final var expectedDescription = "  ";
@@ -123,7 +123,7 @@ public class CategoryTest {
         Assertions.assertNull(actualCategory.getDeletedAt());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidFalseIsActive_whenCallNewCategoryAndValidate_thenShouldReceiveOK() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -144,7 +144,7 @@ public class CategoryTest {
         Assertions.assertNotNull(actualCategory.getDeletedAt());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidActiveCategory_whenCallDeactivate_thenReturnCategoryInactivated() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -174,7 +174,7 @@ public class CategoryTest {
         Assertions.assertNotNull(actualCategory.getDeletedAt());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidInactiveCategory_whenCallActivate_thenReturnCategoryActivated() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -203,7 +203,7 @@ public class CategoryTest {
         Assertions.assertTrue(actualCategory.getUpdatedAt().isAfter(updatedAt));
         Assertions.assertNull(actualCategory.getDeletedAt());
     }
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidCategory_whenCallUpdate_thenReturnCategoryUpdated() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -230,7 +230,7 @@ public class CategoryTest {
         Assertions.assertNull(actualCategory.getDeletedAt());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidCategory_whenCallUpdateToInactive_thenReturnCategoryUpdated() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -259,7 +259,7 @@ public class CategoryTest {
         Assertions.assertNotNull(aCategory.getDeletedAt());
     }
 
-    @Test
+    @CreateCategoryUseCaseTest
     public void givenAValidCategory_whenCallUpdateWithInvalidParams_thenReturnCategoryUpdated() {
         final String expectedName = null;
         final var expectedDescription = "A categoria mais assistida";
