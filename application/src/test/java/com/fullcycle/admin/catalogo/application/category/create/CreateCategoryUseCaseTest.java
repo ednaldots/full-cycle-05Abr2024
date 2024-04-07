@@ -1,18 +1,25 @@
 package com.fullcycle.admin.catalogo.application.category.create;
 
 import com.fullcycle.admin.catalogo.domain.category.CategoryGateway;
+import junit.framework.TestCase;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.Assertions;
 import org.mockito.Mockito;
 
 import java.util.Objects;
 
+import static junit.runner.Version.id;
+import static org.mockito.AdditionalAnswers.returnsFirstArg;
+
+
 @CreateCategoryUseCaseTest
 public @interface CreateCategoryUseCaseTest {
+
 
     public
     class CreateCategoryUseCaseTest {
         private Object gateway;
+        private TestCase assertions;
 
         //1. Teste do caminho feliz
         //2. Teste passando uma propriedade inválida (name)
@@ -21,7 +28,13 @@ public @interface CreateCategoryUseCaseTest {
 
 
         @Test
-        public void givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId() {
+        public void givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId( ) {
+            givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId ( null );
+        }
+
+        @Test
+        public void givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId( TestCase Assertions ) {
+            assertions = Assertions;
 
             final var expectedName = "Filme";
             final var expectedDescription = "A categoria mais assistida";
@@ -33,12 +46,25 @@ public @interface CreateCategoryUseCaseTest {
             Mockito.when(categoryGateway.create(Mockito.any()))
             .thenAnswer(returnsFirstArg());
 
-            final var useCase = new CreateCategoryUseCase(categoryGateway);
+            final var useCase = new CreateCategoryUseCase ( categoryGateway ) {
+                @Override
+                public
+                CreateCategoryOutput execute ( CreateCategoryCommand anIn ) {
+                    return null;
+                }
+
+                @Override
+                public
+                CreateCategoryOutput excute ( CreateCategoryCommand anIn ) {
+                    return null;
+                }
+            };
 
             final var actualOutput = useCase.excute(aCommand);
 
-            Assertions.assertNotNull(actualOutput);
-            Assertions.assertNotNull(actualOutput.getId());
+
+            TestCase.assertNotNull (actualOutput);
+            Assertions.assertNotNull(actualOutput.id ()actualOutput.id ( ) );
 
             Mockito.verify(categoryGateway, Mockito.times(1))
                     .create(Mockito.argThat (aCategory -> {
@@ -54,9 +80,5 @@ public @interface CreateCategoryUseCaseTest {
         }
 
     }
-
-
-
-
 
 }
